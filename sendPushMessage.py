@@ -53,17 +53,4 @@ def push_text_message():
 
     line_bot_api.push_message('to', text_message)
 
-    request = responses.calls[0].request
-    assertEqual(request.method, 'POST')
-    assertEqual(
-        request.url,
-        LineBotApi.DEFAULT_API_ENDPOINT + '/v2/bot/message/push')
-    assertEqual(
-        json.loads(request.body),
-        {
-            "to": "to",
-            "messages": message
-        }
-    )
-
 push_text_message()
