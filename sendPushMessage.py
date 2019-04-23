@@ -19,7 +19,7 @@ line_bot_api = LineBotApi(channel_access_token)
 #    print('e')
 
 while True :
-    tmp = input('Enter a message to send: ')
+    tmp = input("Enter a message to send: ")
     if(tmp!='q') :
         if(isinstance(tmp,str)) :
             line_bot_api.push_message('U11e778e2425c196b6787ec04a198449f', TextSendMessage(text=tmp))
