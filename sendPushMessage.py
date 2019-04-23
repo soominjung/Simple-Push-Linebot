@@ -17,11 +17,11 @@ line_bot_api = LineBotApi(channel_access_token)
 #line_bot_api.push_message('U11e778e2425c196b6787ec04a198449f', TextSendMessage(text='Hello World!'))
 #except LineBotApiError as e:
 #    print('e')
+
 while True :
-    message = input('Enter a message to send: ')
-    print(message)
-    if(message!='q') :
-        if(isinstance(message,str)) :
-            line_bot_api.push_message('U11e778e2425c196b6787ec04a198449f', TextSendMessage(text=message))
+    tmp = input('Enter a message to send: ')
+    if(tmp!='q') :
+        if(isinstance(tmp,str)) :
+            line_bot_api.push_message('U11e778e2425c196b6787ec04a198449f', TextSendMessage(text=tmp))
     else :
         break
