@@ -18,7 +18,7 @@ tmp = input('Enter a message to send: ')
 if(isinstance(tmp,str)) :
     line_bot_api.push_message(userID, TextSendMessage(text=tmp))
 #try:
-line_bot_api.push_message(userID, TextSendMessage(text='Hello World!'))
+#line_bot_api.push_message(userID, TextSendMessage(text='Hello World!'))
 #except LineBotApiError as e:
 
 '''
