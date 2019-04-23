@@ -14,6 +14,9 @@ if channel_access_token is None:
 line_bot_api = LineBotApi(channel_access_token)
 userID = 'U553c02e0b0161bd0006af9a649095107'
 
+tmp = input('Enter a message to send: ')
+if(isinstance(tmp,str)) :
+    line_bot_api.push_message(userID, TextSendMessage(text=tmp))
 #try:
 line_bot_api.push_message(userID, TextSendMessage(text='Hello World!'))
 #except LineBotApiError as e:
