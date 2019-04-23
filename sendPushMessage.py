@@ -74,6 +74,6 @@ if channel_access_token is None:
 line_bot_api = LineBotApi(channel_access_token)
 
 #try:
-    line_bot_api.push_message('U11e778e2425c196b6787ec04a198449f', TextSendMessage(text='Hello World!'))
+line_bot_api.push_message('U11e778e2425c196b6787ec04a198449f', TextSendMessage(text='Hello World!'))
 #except LineBotApiError as e:
 #    print('e')
