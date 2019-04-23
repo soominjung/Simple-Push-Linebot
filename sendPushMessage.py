@@ -51,6 +51,6 @@ def push_text_message():
         json={}, status=200
     )
 
-    line_bot_api.push_message('to', text_message)
+    line_bot_api.push_message('U11e778e2425c196b6787ec04a198449f', text_message)
 
 push_text_message()
