@@ -11,6 +11,8 @@ from linebot.exceptions import (
     LineBotApiError, InvalidSignatureError
 )
 
+import logging
+
 app = Flask(__name__)
 #app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_host=1, x_proto=1)
 
@@ -27,7 +29,7 @@ if channel_access_token is None:
 line_bot_api = LineBotApi(channel_access_token)
 handler = WebhookHandler(channel_secret)
 
-'''
+
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
@@ -49,7 +51,11 @@ def callback():
         abort(400)
 
     return 'OK'
-'''
+
+if __name__ != '__main__':
+    gunicorn_logger = logging.getLogger('gunicorn.error')
+    app.logger.handlers = gunicorn_logger.handlers
+    app.logger.setLevel(gunicorn_logger.level)
 
 if __name__ == '__main__':
     app.run(debug=True)
