@@ -1,8 +1,8 @@
 import os
 import sys
 
-from flask import Flask
-#from werkzeug.middleware.proxy_fix import ProxyFix
+from flask import Flask, request
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 from linebot import (
     LineBotApi, WebhookHandler
