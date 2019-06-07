@@ -12,7 +12,7 @@ if channel_access_token is None:
     sys.exit(1)
 
 line_bot_api = LineBotApi(channel_access_token)
-userID = 'U553c02e0b0161bd0006af9a649095107'
+userID = '<userID>'
 
 tmp = input('Enter a message to send: ')
 if(isinstance(tmp,str)) :
@@ -23,7 +23,7 @@ while True :
     tmp = input('Enter a message to send: ')
     if(tmp!='q') :
         if(isinstance(tmp,str)) :
-            line_bot_api.push_message('U11e778e2425c196b6787ec04a198449f', TextSendMessage(text='hello'))
+            line_bot_api.push_message('<userID>', TextSendMessage(text='hello'))
     else :
         break
 '''
